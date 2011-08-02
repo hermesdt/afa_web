@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AfaWeb</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<!--
+enterprise, a free CSS web template by spyka Webmaster (www.spyka.net)
+
+Download: http://www.spyka.net/web-templates/enterprise/
+
+License: Creative Commons Attribution
+//-->
+<body>
+<div class="wrapper">
+  <div id="container">
+    <div id="header">
+        <h1><a href="/">AFA Website</a></h1><br />
+    <h2>Application Forensic Analisis</h2>
+    </div>
+
+  </div>
+  <div id="nav">
+
+    <%= render :partial => "layouts/menu" %>
+
+  </div>
+  <div id="page-intro">
+  </div>
+  <div id="body">
+  <div id="fade"></div>
+      <div id="dialog"></div>
+    <div id="content">
+      <div id="super_notice"></div>
+
+
+        <%= yield %>
+
+      </div>
+      <div id="sidebar" class="sidebar">
+
+        <%= render :partial => "layouts/sidebar" %>
+
+      </div>
+
+        <div id="footer">
+
+          <%= #render :partial => "layouts/footer"
+          %>
+
+        </div>
+    </div>
+  </body>
+</html>
+

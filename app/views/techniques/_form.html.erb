@@ -1,0 +1,58 @@
+<%= form_for(@technique, :url => (
+  params[:action] == "edit"? plugin_technique_path(@plugin, @technique) : plugin_techniques_path(@plugin))) do |f| %>
+  <div id="explanation">
+  <% if @technique.errors.any? %>
+  <%= render :partial => 'error_explanation' %>
+  <% end %>
+</div>
+
+<% tech = @technique_template.technique %>
+
+  <div class="field">
+    <%= f.label :filename %><br />
+    <%= f.text_field :filename, :value => tech.filename %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location, :value => tech.location %>
+  </div>
+  <div class="field">
+    <%= f.label :technique_type_id %><br />
+    <%= f.select :technique_type_id, TechniqueType.order('updated_at desc').collect {|t| [t.name, t.id]} %>
+    <%= link_to 'Create new Technique Type',
+      {:controller => 'technique_types', :action => 'new'},
+      :remote => true %>
+    </div>
+  <div class="field">
+    <%= f.label :recursively %><br />
+    <%= f.check_box :recursively, :checked => tech.recursively %>
+  </div>
+<% if @technique_template.tech_attr_value('hash_type') %>
+  <div class="field">
+    <%= f.label :hash_type %><br />
+    <%= f.text_field :hash_type, :value => tech.hash_type %>
+  </div>
+<% end %>
+<% if @technique_template.tech_attr_value('hash_value') %>
+  <div class="field">
+    <%= f.label :hash_value %><br />
+    <%= f.text_field :hash_value, :value => tech.hash_value %>
+  </div>
+<% end %>
+<% if @technique_template.tech_attr_value('content') %>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_field :content, :value => tech.content %>
+  </div>
+<% end %>
+<% if @technique_template.tech_attr_value('mimetype') %>
+  <div class="field">
+    <%= f.label :mimetype %><br />
+    <%= f.text_field :mimetype, :value => tech.mimetype %>
+  </div>
+<% end %>
+<br />
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

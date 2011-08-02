@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @category.name %>
+</p>
+
+<div class="grouped-links">
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'List Categories', categories_path %>
+</div>
+

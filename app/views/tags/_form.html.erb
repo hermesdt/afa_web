@@ -1,0 +1,18 @@
+<% remote = request.xhr? %>
+<div id="tag_error_explanation"></div>
+<%= form_for(@tag, :remote => remote) do |f| %>
+  <% if @tag.errors.any? %>
+  <%= render :partial => 'error_explanation' %>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<% if request.xhr? %>
+  <%= link_to 'Close', '#', :remote => true, :onclick => "#{hide_dialog}" %>
+<% end %>

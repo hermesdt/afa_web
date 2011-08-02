@@ -1,0 +1,11 @@
+Technique template
+
+
+- modificando: la relacion este technique_template y technique. Ahora mismo un technique_template deja sus valores
+guardados en un technique. deberia hacer mas fuerte la relacion entre technique_template y technique para que
+al modificiar los valores de los template_fields se vea reflejado alli tambien.
+
+o no es necesario?
+
+- posibles problemas con tec_col_name si cambia?
+

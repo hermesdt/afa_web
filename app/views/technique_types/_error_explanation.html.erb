@@ -1,0 +1,9 @@
+<div id="error_explanation">
+  <h2><%= pluralize(@technique_type.errors.count, "error") %> prohibited this technique_type from being saved:</h2>
+
+  <ul>
+  <% @technique_type.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>

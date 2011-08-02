@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  technique_template_id: 1
+  template_field_id: 1
+
+two:
+  technique_template_id: 1
+  template_field_id: 1

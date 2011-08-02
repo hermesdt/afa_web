@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Filename:</b>
+  <%= @technique.filename %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @technique.location %>
+</p>
+
+<p>
+  <b>Recursively:</b>
+  <%= @technique.recursively %>
+</p>
+<p>
+  <b>Technique type:</b>
+  <%= @technique.technique_type_id %>
+</p>
+
+<p>
+  <b>Hash type:</b>
+  <%= @technique.hash_type %>
+</p>
+
+<p>
+  <b>Hash value:</b>
+  <%= @technique.hash_value %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @technique.content %>
+</p>
+
+<p>
+  <b>Mimetype:</b>
+  <%= @technique.mimetype %>
+</p>
+
+<div class="grouped-links">
+<%= link_to 'Techniques list', plugin_techniques_path(@plugin) %> |
+<%= link_to 'Edit', edit_plugin_technique_path(@plugin, @technique) %>
+</div>
+

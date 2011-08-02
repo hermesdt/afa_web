@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  technique_id: 1
+  filename: false
+  location: false
+  recursively: false
+  hash_type: false
+  hash_value: false
+  content: false
+  mimetype: false
+
+two:
+  technique_id: 1
+  filename: false
+  location: false
+  recursively: false
+  hash_type: false
+  hash_value: false
+  content: false
+  mimetype: false

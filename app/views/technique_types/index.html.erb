@@ -1,0 +1,23 @@
+<h1>Listing Technique Types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @technique_types.each do |technique_type| %>
+  <tr>
+    <td><%= technique_type.name %></td>
+    <td class="td-no-bg"><%= link_to 'Show', technique_type %></td>
+    <td class="td-no-bg"><%= link_to 'Edit', edit_technique_type_path(technique_type) %></td>
+    <td class="td-no-bg"><%= link_to 'Destroy', technique_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<div class="grouped-links">
+<%= link_to 'New Technique type', new_technique_type_path %>
+</div>
+

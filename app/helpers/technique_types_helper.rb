@@ -1,0 +1,2 @@
+module TechniqueTypesHelper
+end

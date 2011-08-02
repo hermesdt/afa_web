@@ -1,0 +1,10 @@
+<h1>New technique of plugin <%= @plugin.name +
+  ((@technique_template.name.blank?) ? "" :
+  " as template '#{@technique_template.name}'") %></h1>
+
+<%= render 'form' %>
+
+<div class="grouped-links">
+<%= link_to 'List', plugin_techniques_path(@plugin) %>
+</div>
+

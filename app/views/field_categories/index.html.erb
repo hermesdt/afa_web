@@ -1,0 +1,23 @@
+<h1>Listing field_categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @field_categories.each do |field_category| %>
+  <tr>
+    <td><%= field_category.name %></td>
+    <td class="td-no-bg"><%= link_to 'Show', field_category %></td>
+    <td class="td-no-bg"><%= link_to 'Edit', edit_field_category_path(field_category) %></td>
+    <td class="td-no-bg"><%= link_to 'Destroy', field_category, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<div class="grouped-links">
+<%= link_to 'New Field category', new_field_category_path %>
+</div>
+

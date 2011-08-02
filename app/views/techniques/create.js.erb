@@ -1,0 +1,8 @@
+$('#explanation').html('')
+$("#notice").html('')
+
+<% if @technique.errors.any? %>
+  $("#explanation").html("<%= escape_javascript(render :partial => 'error_explanation')%>")
+<% else %>
+  $("#notice").html('<%= escape_javascript(flash.delete(:notice)) %>');
+<% end %>

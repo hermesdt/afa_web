@@ -1,0 +1,2 @@
+module FieldCategoriesHelper
+end

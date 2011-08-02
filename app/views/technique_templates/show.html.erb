@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Template name:</b>
+  <%= @technique_template.name %>
+  </p>
+
+<% for field in @technique_template.template_fields %>
+  <p>
+  <b><%= field.tech_col_name.titleize %>:</b>
+  <%= @technique_template.technique.attributes[field.tech_col_name] %>
+  </p>
+<% end %>
+
+
+<div class="grouped-links">
+<%= link_to 'Edit', edit_technique_template_path(@technique_template) %> |
+<%= link_to 'Back', technique_templates_path %>
+</div>
+

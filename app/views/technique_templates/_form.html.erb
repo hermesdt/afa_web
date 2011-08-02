@@ -1,0 +1,52 @@
+<%= form_for(@technique_template, :html => {:id => 'technique_template_form'}) do |f| %>
+  <% if @technique_template.errors.any? or @technique.errors.any? %>
+     <div id="error_explanation">
+      <h2><%= pluralize(@technique_template.errors.count + @technique.errors.count, "error") %> prohibited this technique_template from being saved:</h2>
+
+      <ul>
+      <% @technique_template.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+      <ul>
+      <% @technique.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Template name' %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div  id="actions" class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<% javascript_tag do %>
+  <% for field in @technique_template.template_fields %>
+    add_field_to_template(<%= raw field.to_json %>,
+    '<%= @technique_template.technique.attributes[field.tech_col_name] %>');
+  <% end %>
+<% end %>
+
+<div id="accordion">
+  <% for category in FieldCategory.all %>
+    <h3><%= link_to category.name, '#' %></h3>
+    <div>
+      <ul>
+        <% for field in category.template_fields %>
+          <li class="ui-corner-all"><%= link_to (field.name +
+            " ("+field.tech_col_name+")"), {:controller => 'technique_templates',
+                                              :action => "add_field_to_template",
+                                              :id => field.id},
+            :remote => true %>
+          </li>
+        <% end %>
+      </ul>
+		</div>
+  <% end %>
+</div>
+

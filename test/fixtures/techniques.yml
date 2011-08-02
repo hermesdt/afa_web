@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  filename: MyString
+  technique_type_id: 1
+  hash_type: MyString
+  hash_value: MyString
+  content: MyString
+
+two:
+  filename: MyString
+  technique_type_id: 1
+  hash_type: MyString
+  hash_value: MyString
+  content: MyString

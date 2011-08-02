@@ -1,0 +1,50 @@
+<div id="top_menu">
+  <ul id="jsddm">
+    <li class="<%= (request.path == root_path)? "selected" : selected_class(index_path) %>">
+      <%= link_to 'Home', index_path %>
+    </li>
+    <li class="fixed-elem <%=
+    "selected" if not (selected_class(plugins_path).blank? and
+                    selected_class(categories_path).blank? and
+                    selected_class(technique_types_path).blank? and
+                    selected_class(tags_path).blank? and
+                    selected_class(technique_templates_path).blank? )
+    %>">
+    <%= image_tag('down-icon.png', :id => 'down-icon') %>
+    <%= link_to 'Plugins News', plugins_news_path, :class => 'right-padding' %>
+      <ul class="no-right-image">
+        <li class="<%= 'sub-' + selected_class(plugins_path) %>">
+          <%= link_to 'Plugins', plugins_path %>
+        </li>
+        <li class="<%= 'sub-' + selected_class(categories_path) %>">
+          <%= link_to 'Categories', categories_path %>
+        </li>
+        <li class="<%= 'sub-' + selected_class(technique_types_path) %>">
+          <%= link_to 'Technique Type', technique_types_path %>
+        </li>
+        <li class="<%= 'sub-' + selected_class(tags_path) %>">
+          <%= link_to 'Tags', tags_path %>
+        </li>
+        <li class="<%= 'sub-' + selected_class(technique_templates_path) %>">
+          <%= link_to 'Technique Templates', technique_templates_path %>
+        </li>
+        <li class="<%= 'sub-' + selected_class(field_categories_path) %>">
+          <%= link_to 'Field Categories', field_categories_path %>
+        </li>
+        <li class="<%= 'sub-' + selected_class(template_fields_path) %>">
+          <%= link_to 'Template Fields', template_fields_path %>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Wiki</a>
+    </li>
+    <li class="<%= selected_class(about_path)%>">
+      <%= link_to 'About', about_path %>
+    </li>
+    <li>
+      <a href="#">Contact</a>
+    </li>
+  </ul>
+</div>
+

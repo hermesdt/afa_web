@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @template_field.name %>
+</p>
+
+<p>
+  <b>Values:</b>
+  <%= @template_field.join_values %>
+</p>
+
+<p>
+  <b>Tech col name:</b>
+  <%= @template_field.tech_col_name %>
+</p>
+
+<p>
+  <b>Field category:</b>
+  <%= @template_field.field_category.name %>
+</p>
+
+<div class="grouped-links">
+<%= link_to 'Edit', edit_template_field_path(@template_field) %> |
+<%= link_to 'Back', template_fields_path %>
+</div>
+

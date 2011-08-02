@@ -1,0 +1,8 @@
+<div class="check-box">
+  <% #si @plugin.nil? significa que esta creando un nuevu plugin y por defecto %>
+  <% #debe tener valor true %>
+
+  <% inc = (@plugin.nil?)? true : @plugin.tags.include?(@tag) %>
+  <%= check_box_tag 'plugin[tag_ids][]', @tag.id, inc %>
+  <%= @tag.name%>
+</div>

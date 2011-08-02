@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  value: MyString
+  tech_col_name: MyString
+  field_category_id: 1
+
+two:
+  name: MyString
+  value: MyString
+  tech_col_name: MyString
+  field_category_id: 1

@@ -1,0 +1,54 @@
+<%= form_for(@plugin) do |f| %>
+  <div id="explanation">
+  <% if @plugin.errors.any? %>
+  <%= render :partial => 'error_explanation' %>
+  <% end %>
+</div>
+<div id="notice">
+</div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :os %><br />
+    <%= f.text_field :os %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br />
+    <%= f.select 'category_id', Category.order('updated_at desc').collect {|c| [c.name, c.id]} %>
+    <%= link_to 'Create new category',
+      {:controller => 'categories', :action => 'new'},
+      :remote => true %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 7, :cols => 50 %>
+  </div>
+  <div id="selected_tags">
+    <% for @tag in @plugin.tags do %>
+      <%= render :partial => 'tag_checkbox' %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<div id="tag_cloud_div">
+    <h2>Tag Cloud</h2>
+
+    <%= link_to 'Create new tag',
+      {:controller => 'tags', :action => 'new'},
+      :remote => true %>
+
+  <div id="tag_cloud" class="ui-corner-all">
+    <%= get_all_tags_as_links %>
+  </div>
+  </div>
+

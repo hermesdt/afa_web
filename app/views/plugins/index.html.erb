@@ -1,0 +1,31 @@
+<h1>Listing plugins</h1>
+
+<table>
+  <tr>
+    <th><%= sortable('name', Plugin) %></th>
+    <th><%= sortable('os', Plugin) %></th>
+    <th><%= sortable('category_id', Plugin) %></th>
+    <th><%= sortable('author', Plugin) %></th>
+  </tr>
+
+<% @plugins.each do |plugin| %>
+  <tr>
+    <td><%= plugin.name %></td>
+    <td><%= plugin.os %></td>
+    <td><%= plugin.category.name %></td>
+    <td><%= plugin.author %></td>
+    <td class="td-no-bg"><%= link_to 'Techniques', plugin_techniques_path(plugin) %>
+    <td class="td-no-bg"><%= link_to 'Show', plugin %></td>
+    <td class="td-no-bg"><%= link_to 'Edit', edit_plugin_path(plugin) %></td>
+    <td class="td-no-bg"><%= link_to 'Destroy', plugin, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="td-no-bg"><a href="<%= plugin_path(plugin) %><%= ".xml" %>">xml</a></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<div class="grouped-links">
+<%= link_to 'New Plugin', new_plugin_path %>
+</div>
+

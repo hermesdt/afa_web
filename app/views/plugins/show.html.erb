@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @plugin.name %>
+</p>
+
+<p>
+  <b>Os:</b>
+  <%= @plugin.os %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @plugin.category.name %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @plugin.author %>
+</p>
+
+<p>
+<b>Tags:</b>
+  <div id="tag_list">
+    <% tags = @plugin.tags%>
+    <% for tag in tags do%>
+      <%= tag.name %><%=", " if tags.index(tag) < tags.size()-1 %>
+    <% end %>
+  </div>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @plugin.description %>
+</p>
+
+<div class="grouped-links">
+<%= link_to 'Plugins list', plugins_path %> |
+<%= link_to 'Techniques list', plugin_techniques_path(@plugin)%> |
+<%= link_to 'Edit', edit_plugin_path(@plugin) %>
+</div>
+

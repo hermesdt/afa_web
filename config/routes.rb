@@ -6,7 +6,10 @@ AfaWeb::Application.routes.draw do
 
   resources :field_categories
 
-    match 'plugins/news' => 'plugins#news'
+  match 'plugins/news' => 'plugins#news'
+  match "/auth/:provider/callback" => "sessions#create"
+  match "/logout" => "sessions#destroy"
+  match "/login" => "sessions#logins"
 
   resources :plugins do
     resources :techniques

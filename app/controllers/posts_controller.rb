@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
+  before_filter :authenticated!, :only => [:create, :new, :update, :edit]
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all
+    @posts = Post.order("updated_at desc").all
 
     respond_to do |format|
       format.html # index.html.erb

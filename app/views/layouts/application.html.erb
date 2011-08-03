@@ -14,6 +14,13 @@ Download: http://www.spyka.net/web-templates/enterprise/
 License: Creative Commons Attribution
 //-->
 <body>
+<div id="login_block">
+<% if current_user %>
+  Welcome, <%= current_user.name%> | <%= link_to "Sign out", "/logout" %>
+<% else %>
+  <%= link_to "Sign in", "/login" %>
+<% end %>
+</div>
 <div class="wrapper">
   <div id="container">
     <div id="header">

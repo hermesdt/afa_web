@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'mongrel'
 gem 'mongrel_cluster'
+gem 'omniauth'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -30,6 +30,7 @@ AfaWeb::Application.routes.draw do
 
   match 'index' => 'home#index'
   match 'about' => 'home#about'
+  match 'downloads' => 'downloads#index'
 
 
   # The priority is based upon order of creation:

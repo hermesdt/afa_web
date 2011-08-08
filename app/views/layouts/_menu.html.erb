@@ -3,6 +3,9 @@
     <li class="<%= (request.path == root_path)? "selected" : selected_class(index_path) %>">
       <%= link_to 'Home', index_path %>
     </li>
+    <li class="<%= (request.path == root_path)? "selected" : selected_class(downloads_path) %>">
+      <%= link_to 'Downloads', downloads_path %>
+    </li>
     <li class="fixed-elem <%=
     "selected" if not (selected_class(plugins_path).blank? and
                     selected_class(categories_path).blank? and

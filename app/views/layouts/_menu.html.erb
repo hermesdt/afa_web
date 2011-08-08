@@ -14,7 +14,7 @@
                     selected_class(technique_templates_path).blank? )
     %>">
     <%= image_tag('down-icon.png', :id => 'down-icon') %>
-    <%= link_to 'Plugins News', plugins_news_path, :class => 'right-padding' %>
+    <%= link_to 'Plugins News', "#", :class => 'right-padding' %>
       <ul class="no-right-image">
         <li class="<%= 'sub-' + selected_class(plugins_path) %>">
           <%= link_to 'Plugins', plugins_path %>

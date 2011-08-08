@@ -155,13 +155,18 @@ h1 {
 	padding-bottom: 5px;
 }
 
+#body h1 {
+  margin-bottom: 15px;
+  font-size: 30px;
+}
+
 h2 {
 	color: #111;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 28px;
 	letter-spacing: -0.5px;
-	padding: 10px !important;
-	margin: 0;
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
 	font-weight: normal;
 }
 
@@ -730,16 +735,20 @@ div#footer-links p {
 
 .post {
   display: block;
-  background-color: #ffffff;
-  padding: 3px;
-  margin: 10px;
+  margin-bottom: 40px;
+}
+
+.post .title {
 }
 
 .post .field {
-  padding: 3px;
+  padding: 10px;
   display: block;
   border: 1px solid #000000;
 }
 
-.post .title {background-color: #000000; color: #ffffff;}
-.post .title a {background-color: #000000; color: #ffffff;}
+.post .title {
+//  background-color: #000000; color: #ffffff;
+background: url('/images/title_background.png') repeat-x left top;
+}
+.post .title a { color: #ffffff;}

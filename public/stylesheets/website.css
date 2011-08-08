@@ -7,6 +7,19 @@ body {
 	color: #333;
 }
 
+table {
+  margin-top: 10px;
+}
+
+table th {
+  background-color: #3588ad;
+color: #ffffff;
+}
+
+table th a, table th a:visited {
+color: #ffffff;
+}
+
 .wrapper {
 	background: #ddd url('/images/bodybg-small.png') repeat-x scroll top left;
 }
@@ -438,7 +451,7 @@ li ol, li ul {
 	float: left;
 	margin: 0;
 	position: relative;
-	width: 620px;
+	width: 100%;
 }
 
 .sidebar {

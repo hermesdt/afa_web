@@ -6,6 +6,7 @@
     <th>Values</th>
     <th>Tech col name</th>
     <th>Field category</th>
+    <th></th>
   </tr>
 
 <% @template_fields.each do |template_field| %>
@@ -14,9 +15,11 @@
     <td><%= template_field.join_values %></td>
     <td><%= template_field.tech_col_name %></td>
     <td><%= template_field.field_category.name %></td>
-    <td class="td-no-bg"><%= link_to 'Show', template_field %></td>
-    <td class="td-no-bg"><%= link_to 'Edit', edit_template_field_path(template_field) %></td>
-    <td class="td-no-bg"><%= link_to 'Destroy', template_field, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+    <%= link_to image_show, template_field %>
+    <%= link_to image_edit, edit_template_field_path(template_field) %>
+    <%= link_to image_destroy, template_field, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
@@ -24,6 +27,6 @@
 <br />
 
 <div class="grouped-links">
-<%= link_to 'New Template field', new_template_field_path %>
+<%= link_to image_add() + ' New Template field', new_template_field_path %>
 </div>
 

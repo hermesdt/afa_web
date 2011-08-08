@@ -53,6 +53,30 @@ module ApplicationHelper
 
   end
 
+  def image_add
+    image_tag "add.png"
+  end
+
+  def image_xml
+    image_tag "xml.png"
+  end
+
+  def image_destroy
+    image_tag "destroy.png"
+  end
+
+  def image_edit
+    image_tag "edit.png"
+  end
+
+  def image_show
+    image_tag "show.png"
+  end
+
+  def image_technique
+    image_tag "technique.png"
+  end
+
   def get_all_tags_as_links 
     res = ""
 

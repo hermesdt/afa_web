@@ -3,14 +3,17 @@
 <table>
   <tr>
     <th>Template name</th>
+    <th></th>
   </tr>
 
 <% @technique_templates.each do |technique_template| %>
   <tr>
     <td><%= technique_template.name %></td>
-    <td class="td-no-bg"><%= link_to 'Show', technique_template %></td>
-    <td class="td-no-bg"><%= link_to 'Edit', edit_technique_template_path(technique_template) %></td>
-    <td class="td-no-bg"><%= link_to 'Destroy', technique_template, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+    <%= link_to image_show, technique_template %>
+    <%= link_to image_edit, edit_technique_template_path(technique_template) %>
+    <%= link_to image_destroy, technique_template, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
@@ -18,6 +21,6 @@
 <br />
 
 <div class="grouped-links">
-<%= link_to 'New Technique template', new_technique_template_path %>
+<%= link_to image_add() + ' New Technique template', new_technique_template_path %>
 </div>
 

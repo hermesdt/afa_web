@@ -6,6 +6,7 @@
     <th><%= sortable('os', Plugin) %></th>
     <th><%= sortable('category_id', Plugin) %></th>
     <th><%= sortable('author', Plugin) %></th>
+    <th></th>
   </tr>
 
 <% @plugins.each do |plugin| %>
@@ -14,11 +15,11 @@
     <td><%= plugin.os %></td>
     <td><%= plugin.category.name %></td>
     <td><%= plugin.author %></td>
-    <td class="td-no-bg"><%= link_to 'Techniques', plugin_techniques_path(plugin) %>
-    <td class="td-no-bg"><%= link_to 'Show', plugin %></td>
-    <td class="td-no-bg"><%= link_to 'Edit', edit_plugin_path(plugin) %></td>
-    <td class="td-no-bg"><%= link_to 'Destroy', plugin, :confirm => 'Are you sure?', :method => :delete %></td>
-    <td class="td-no-bg"><a href="<%= plugin_path(plugin) %><%= ".xml" %>">xml</a></td>
+    <td><%= link_to image_technique, plugin_techniques_path(plugin) %>
+    <%= link_to image_show(), plugin %>
+    <%= link_to image_edit, edit_plugin_path(plugin) %>
+    <%= link_to image_destroy, plugin, :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to image_xml, plugin_path(plugin, :format => "xml") %></td>
   </tr>
 <% end %>
 </table>
@@ -26,6 +27,6 @@
 <br />
 
 <div class="grouped-links">
-<%= link_to 'New Plugin', new_plugin_path %>
+<%= link_to image_add() + ' New Plugin', new_plugin_path %>
 </div>
 

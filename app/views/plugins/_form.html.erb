@@ -18,7 +18,7 @@
   <div class="field">
     <%= f.label :category_id %><br />
     <%= f.select 'category_id', Category.order('updated_at desc').collect {|c| [c.name, c.id]} %>
-    <%= link_to 'Create new category',
+    <%= link_to image_add() +' Create new category',
       {:controller => 'categories', :action => 'new'},
       :remote => true %>
   </div>
@@ -43,7 +43,7 @@
 <div id="tag_cloud_div">
     <h2>Tag Cloud</h2>
 
-    <%= link_to 'Create new tag',
+    <%= link_to image_add() + ' Create new tag',
       {:controller => 'tags', :action => 'new'},
       :remote => true %>
 

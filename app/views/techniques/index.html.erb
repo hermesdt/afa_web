@@ -2,14 +2,18 @@
 
 <table>
   <tr>
+  <th>Technique number</th>
+  <th></th>
   </tr>
 
 <% @techniques.each do |technique| %>
   <tr>
     <td><%= "Technique: " + (@techniques.index(technique)+1).to_s %></td>
-    <td class="td-no-bg"><%= link_to 'Show', [@plugin, technique] %></td>
-    <td class="td-no-bg"><%= link_to 'Edit', edit_plugin_technique_path(@plugin, technique) %></td>
-    <td class="td-no-bg"><%= link_to 'Destroy', [@plugin, technique], :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+    <%= link_to image_show, [@plugin, technique] %>
+    <%= link_to image_edit, edit_plugin_technique_path(@plugin, technique) %>
+    <%= link_to image_destroy, [@plugin, technique], :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
@@ -24,7 +28,7 @@ Template:
   <%= submit_tag 'New technique' %>
 <% end %>
 
-<br />
+<br /><br />
 <div class="grouped-links">
 <%= link_to 'Plugins List', plugins_path %> |
 <%= link_to 'Show Plugin', plugin_path(@plugin) %>

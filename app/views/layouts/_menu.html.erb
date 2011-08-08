@@ -3,7 +3,7 @@
     <li class="<%= (request.path == root_path)? "selected" : selected_class(index_path) %>">
       <%= link_to 'Home', index_path %>
     </li>
-    <li class="<%= (request.path == root_path)? "selected" : selected_class(downloads_path) %>">
+    <li class="<%= (request.path == downloads_path)? "selected" : selected_class(downloads_path) %>">
       <%= link_to 'Downloads', downloads_path %>
     </li>
     <li class="fixed-elem <%=

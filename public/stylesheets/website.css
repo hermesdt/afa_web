@@ -7,13 +7,26 @@ body {
 	color: #333;
 }
 
+a:hover {
+background: none;
+  }
+
 table {
+  width: 100% !important;
   margin-top: 10px;
 }
 
 table th {
   background-color: #3588ad;
 color: #ffffff;
+}
+
+table th:last-child {
+  width: 150px;
+}
+
+table td:last-child {
+  text-align: center;
 }
 
 table th a, table th a:visited {

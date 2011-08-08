@@ -1,19 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Author:</b>
-  <%= @post.author_id %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Text:</b>
-  <%= raw @post.text %>
-</p>
+<%= render :partial => @post %>
 
 <p>
 <%= link_to 'Edit', edit_post_path(@post) %> | 

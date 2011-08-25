@@ -1,5 +1,7 @@
 AfaWeb::Application.routes.draw do
 
+  devise_for :users
+
   resources :posts
 
   resources :template_fields

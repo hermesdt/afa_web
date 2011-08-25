@@ -15,7 +15,13 @@ AfaWeb::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true 
+
+  ActionMailer::Base.delivery_method = :sendmail
+  ActionMailer::Base.sendmail_settings = {
+    :location => "/usr/sbin/sendmail",
+    :arguments => "-i"
+  }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log

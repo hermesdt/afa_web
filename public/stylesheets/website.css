@@ -413,11 +413,11 @@ li ol, li ul {
 
 #content form {
   width: auto;
-  float: left;
+ /* float: left; */
 }
 
 #content > a {
-  float: left;
+  /* float: left; */
   clear: both;
 }
 .grouped-links {

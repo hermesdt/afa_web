@@ -11,6 +11,7 @@ gem 'mongrel'
 gem 'mongrel_cluster'
 gem 'omniauth'
 gem 'devise', '1.2'
+gem 'pry', :group => :development
 
 # Use unicorn as the web server
 # gem 'unicorn'

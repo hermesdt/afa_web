@@ -1,6 +1,9 @@
 AfaWeb::Application.routes.draw do
 
-  devise_for :users
+#  devise_for :users
+  devise_for :users, :path_names => {:sign_in => "login", :sign_out => "logout"}
+
+  resources :users
 
   resources :posts
 
@@ -9,8 +12,6 @@ AfaWeb::Application.routes.draw do
   resources :field_categories
 
   match 'plugins/news' => 'plugins#news'
-  match "/logout" => "sessions#destroy"
-  match "/login" => "sessions#logins"
 
   resources :plugins do
     resources :techniques

@@ -15,10 +15,10 @@ License: Creative Commons Attribution
 //-->
 <body>
 <div id="login_block">
-<% if current_user %>
-  Welcome, <%= current_user.name%> | <%= link_to "Sign out", "/logout" %>
+<% if user_signed_in? %>
+  Welcome, <%= link_to current_user.name, edit_user_registration_path %> | <%= link_to "Sign out", destroy_user_session_path %>
 <% else %>
-  <%= link_to "Sign in", "/login" %>
+  <%= link_to "Sign in", new_user_session_path %>
 <% end %>
 </div>
 <div class="wrapper">

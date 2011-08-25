@@ -10,6 +10,7 @@ gem 'jquery-rails', '>= 0.2.6'
 gem 'mongrel'
 gem 'mongrel_cluster'
 gem 'omniauth'
+gem 'devise', '1.2'
 
 # Use unicorn as the web server
 # gem 'unicorn'

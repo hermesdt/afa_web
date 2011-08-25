@@ -3,8 +3,8 @@
     <li class="<%= (request.path == root_path)? "selected" : selected_class(index_path) %>">
       <%= link_to 'Home', index_path %>
     </li>
-    <li class="<%= (request.path == downloads_path)? "selected" : selected_class(downloads_path) %>">
-      <%= link_to 'Downloads', downloads_path %>
+    <li class="<%= (request.path.to_s[posts_path.to_s])? "selected" : selected_class(posts_path) %>">
+      <%= link_to 'Blog', posts_path %>
     </li>
     <li class="fixed-elem <%=
     "selected" if not (selected_class(plugins_path).blank? and
@@ -39,15 +39,20 @@
         </li>
       </ul>
     </li>
-    <li>
+    <li class="<%= (request.path == downloads_path)? "selected" : "" %>">
+      <%= link_to 'Downloads', downloads_path %>
+    </li>
+<!--    <li>
       <a href="#">Wiki</a>
     </li>
+-->
     <li class="<%= selected_class(about_path)%>">
       <%= link_to 'About', about_path %>
     </li>
-    <li>
+<!--    <li>
       <a href="#">Contact</a>
     </li>
+-->
   </ul>
 </div>
 

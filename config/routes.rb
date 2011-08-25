@@ -7,7 +7,6 @@ AfaWeb::Application.routes.draw do
   resources :field_categories
 
   match 'plugins/news' => 'plugins#news'
-  match "/auth/:provider/callback" => "sessions#create"
   match "/logout" => "sessions#destroy"
   match "/login" => "sessions#logins"
 
@@ -22,7 +21,6 @@ AfaWeb::Application.routes.draw do
   match 'plugins/:plugin_id/techniques/new' => 'techniques#new', :via => [:post]
   match 'plugins/add_tag/:id' => 'plugins#add_tag'
   match 'technique_templates/add_field_to_template/:id' => 'technique_templates#add_field_to_template'
-
 
   resources :technique_types
 

@@ -440,6 +440,11 @@ li ol, li ul {
   background: none !important;
 }
 
+#technique_template_form {
+position: relative;
+float: left;
+}
+
 /********************/
 
 #page-intro {
@@ -709,10 +714,8 @@ div#footer-links p {
 #accordion {
   display: block;
   width: 260px;
-  right: 5px !important;
-  margin-right: 30px;
-  margin-top: 20px;
-  position: absolute;
+  position: relative;
+  float: right;
 }
 
 #accordion  div {

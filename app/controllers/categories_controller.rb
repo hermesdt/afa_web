@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_filter :check_ability, :except => [:index, :show]
 
   # GET /categories
   # GET /categories.xml

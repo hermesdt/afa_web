@@ -1,0 +1,19 @@
+<p><%= alert %></p>
+<%= form_for(@user, :html => { :method => :put }) do |f| %>
+
+  <p><%= f.label :name %><br />
+  <%= @user.name %></p>
+
+  <p><%= f.check_box :is_admin %>
+<%= f.label :is_admin, "Is admin?" %></p>
+  
+  <p><%= f.label :email %><br />
+  <%= f.email_field :email %></p>
+
+  <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <%= f.password_field :password %></p>
+
+  <p><%= f.submit "Update" %></p>
+<% end %>
+
+<%= link_to "Back", users_path %>

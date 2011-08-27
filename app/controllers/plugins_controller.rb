@@ -1,4 +1,5 @@
 class PluginsController < ApplicationController
+  before_filter :check_ability, :except => [:index, :show]
 
   # GET /plugins
   # GET /plugins.xml

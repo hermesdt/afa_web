@@ -30,17 +30,5 @@ class ApplicationController < ActionController::Base
     raise Exception.new "Need to be admin" unless current_user.is_admin?
   end
 
-  def unauthorized
-    raise Exception.new "Not authorized"
-  end
-
-  def check_ability
-    unauthorized if params[:action].nil? or params[:controller].nil?
-    return if current_user.is_admin?
-
-    model = params[:controller].singularize.camelize
-
-    unauthorized unless current_user.can? params[:action].to_s, model
-  end
 
 end

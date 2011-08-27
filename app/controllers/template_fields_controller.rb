@@ -1,5 +1,6 @@
 class TemplateFieldsController < ApplicationController
 
+  before_filter :check_ability, :except => [:index, :show]
 
   # GET /template_fields
   # GET /template_fields.xml

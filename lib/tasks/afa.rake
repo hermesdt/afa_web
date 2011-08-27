@@ -14,7 +14,7 @@ namespace :afa do
     end
     u.password = password
 
-    u.save(false)
+    u.save(:validate => false)
     puts ""
     puts "Admin generated with: :name => 'admin', :email => 'admin', :password => '#{password}'"
   end

@@ -1,4 +1,5 @@
 class TechniquesController < ApplicationController
+  before_filter :check_ability, :except => [:index, :show]
   before_filter(:get_plugin)
   
   # GET /techniques

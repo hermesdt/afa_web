@@ -17,8 +17,9 @@
     <td><%= template_field.field_category.name %></td>
     <td>
     <%= link_to image_show, template_field %>
-    <%= link_to image_edit, edit_template_field_path(template_field) %>
-    <%= link_to image_destroy, template_field, :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to image_edit, edit_template_field_path(template_field) if can?("manage", "TemplateField")%>
+    <%= link_to image_destroy, template_field, :confirm => 'Are you sure?', 
+    :method => :delete if can?("manage", "TemplateField")%>
     </td>
   </tr>
 <% end %>
@@ -27,6 +28,6 @@
 <br />
 
 <div class="grouped-links">
-<%= link_to image_add() + ' New Template field', new_template_field_path %>
+<%= link_to image_add() + ' New Template field', new_template_field_path if can?("manage", "TemplateField") %>
 </div>
 

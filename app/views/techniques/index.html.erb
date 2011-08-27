@@ -11,14 +11,16 @@
     <td><%= "Technique: " + (@techniques.index(technique)+1).to_s %></td>
     <td>
     <%= link_to image_show, [@plugin, technique] %>
-    <%= link_to image_edit, edit_plugin_technique_path(@plugin, technique) %>
-    <%= link_to image_destroy, [@plugin, technique], :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to image_edit, edit_plugin_technique_path(@plugin, technique) if can?("manage", "Technique")%>
+    <%= link_to image_destroy, [@plugin, technique], :confirm => 'Are you sure?', 
+    :method => :delete if can?("manage", "Technique") %>
     </td>
   </tr>
 <% end %>
 </table>
 <br />
 
+<% if can?("manage", "Technique") %>
 <%= form_tag(new_plugin_technique_path(@plugin), :method => 'post') do %>
 Template:
   <select name="template_id" onchange="">
@@ -26,6 +28,7 @@ Template:
     <%= options_for_select TechniqueTemplate.all.collect {|t| [t.name, t.id]}, :include_blank => true  %>
   </select>
   <%= submit_tag 'New technique' %>
+<% end %>
 <% end %>
 
 <br /><br />

@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Last update</th>
+    <th></th>
+  </tr>
+  <% for post in @posts %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.author_name %></td>
+      <td><%= post.updated_at %></td>
+      <td>
+        <%= link_to image_show, post_path(post) %>
+        <%= link_to image_edit, edit_post_path(post)%>
+        <%= link_to image_destroy, post_path(post), :method => :delete, :confirm => "Are you sure?" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br />
+<%= link_to image_add + "New post", new_post_path %>

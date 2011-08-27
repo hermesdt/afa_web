@@ -1,5 +1,7 @@
 class TechniqueTemplatesController < ApplicationController
 
+  before_filter :check_ability, :except => [:index, :show]
+
   # GET /technique_templates
   # GET /technique_templates.xml
   def index

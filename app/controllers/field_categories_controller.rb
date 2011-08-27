@@ -1,4 +1,6 @@
 class FieldCategoriesController < ApplicationController
+  before_filter :check_ability, :except => [:index, :show]
+
   # GET /field_categories
   # GET /field_categories.xml
   def index

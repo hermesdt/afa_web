@@ -3,9 +3,14 @@ AfaWeb::Application.routes.draw do
 #  devise_for :users
   devise_for :users, :path_names => {:sign_in => "login", :sign_out => "logout"}
 
-  resources :users
+  resources :users do
+    get 'abilities', :on => :member
+    post 'update_abilities', :on => :member
+  end
 
-  resources :posts
+  resources :posts do
+    get 'admin', :on => :collection
+  end
 
   resources :template_fields
 
@@ -31,6 +36,7 @@ AfaWeb::Application.routes.draw do
 
   match 'index' => 'home#index'
   match 'about' => 'home#about'
+  match 'administration' => 'home#administration'
   match 'downloads' => 'downloads#index'
 
 

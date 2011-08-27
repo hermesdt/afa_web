@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :check_ability, :except => [:index, :show]
+
   before_filter :authenticated!, :only => [:create, :new, :update, :edit]
   # GET /posts
   # GET /posts.xml
@@ -9,6 +11,10 @@ class PostsController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @posts }
     end
+  end
+
+  def admin
+    @posts = Post.all
   end
 
   # GET /posts/1
@@ -43,6 +49,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.author = current_user
+    @post.author_name = current_user.name
 
     respond_to do |format|
       if @post.save

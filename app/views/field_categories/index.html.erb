@@ -11,8 +11,9 @@
     <td><%= field_category.name %></td>
     <td>
     <%= link_to image_show, field_category %>
-    <%= link_to image_edit, edit_field_category_path(field_category) %>
-    <%= link_to image_destroy, field_category, :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to image_edit, edit_field_category_path(field_category) if can?("manage", "FieldCategory") %>
+    <%= link_to image_destroy, field_category, :confirm => 'Are you sure?', 
+    :method => :delete if can?("manage", "FieldCategory") %>
     </td>
   </tr>
 <% end %>
@@ -21,6 +22,7 @@
 <br />
 
 <div class="grouped-links">
-<%= link_to image_add() + ' New Field category', new_field_category_path %>
+<%= link_to image_add() + ' New Field category', 
+  new_field_category_path if can?("manage", "FieldCategory") %>
 </div>
 

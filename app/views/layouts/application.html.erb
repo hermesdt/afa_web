@@ -14,6 +14,13 @@ Download: http://www.spyka.net/web-templates/enterprise/
 License: Creative Commons Attribution
 //-->
 <body>
+<!--
+  <% if flash[:alert] %>
+    <p><%= alert %></p>
+  <% elsif flash[:notice] %>
+    <p><%= notice %></p>
+  <% end %>
+-->
 <div id="login_block">
 <% if user_signed_in? %>
   Welcome, <%= link_to current_user.name, edit_user_registration_path %> | <%= link_to "Sign out", destroy_user_session_path %>

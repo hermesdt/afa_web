@@ -11,8 +11,9 @@
     <td><%= tag.name %></td>
     <td>
     <%= link_to image_show, tag %>
-    <%= link_to image_edit, edit_tag_path(tag) %>
-    <%= link_to image_destroy, tag, :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to image_edit, edit_tag_path(tag) if can?("manage", "Tag") %>
+    <%= link_to image_destroy, tag, :confirm => 'Are you sure?', 
+    :method => :delete if can?("manage", "Tag") %>
     </td>
   </tr>
 <% end %>
@@ -21,6 +22,6 @@
 <br />
 
 <div class="grouped-links">
-<%= link_to image_add() + ' New Tag', new_tag_path %>
+<%= link_to image_add() + ' New Tag', new_tag_path if can?("manage", "Tag") %>
 </div>
 

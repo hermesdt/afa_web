@@ -1,5 +1,9 @@
 <h1>Listing posts</h1>
 
+<% if can?("manage", "Post") %>
+<%= link_to image_add + "New post", new_post_path %><br /><br />
+<% end %>
+
 <% for post in @posts %>
  <%= render :partial => post %>
 <% end %>

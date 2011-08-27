@@ -1,0 +1,18 @@
+<table>
+<tr>
+  <th>Name</th>
+  <th>Email</th>
+  <th></th>
+</tr>
+<% for user in @users %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td>
+      <%= link_to image_edit, edit_user_path(user) %>
+      <%= link_to image_manage_abilities, abilities_user_path(user)  %>
+      <%= link_to image_destroy, user_path(user), :method => :delete, :confirm => "Are you sure?" %>
+    </td>
+  </tr>
+<% end %>
+</table>

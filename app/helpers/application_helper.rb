@@ -11,6 +11,13 @@ module ApplicationHelper
     link_to title, {:sort => column, :direction => direction}, {:class => css_class}
   end
 
+  def can?(action, model)
+    return false if current_user.nil?
+    return true if current_user.is_admin?
+
+    return current_user.can?(action, model)
+  end
+
   def show_dialog
     '$("#dialog").html("' + escape_javascript(render(:partial => "form")) + '");' +
     '$("#fade").click(function() {' +
@@ -51,6 +58,18 @@ module ApplicationHelper
         '$("#super_notice").html("'+escape_javascript(flash.delete(:notice))+'");'
     end
 
+  end
+
+  def image_blog
+    image_tag "blog.png"
+  end
+
+  def image_manage_abilities
+    image_tag "manage_abilities.png"
+  end
+
+  def image_users
+    image_tag "users.png"
   end
 
   def image_add

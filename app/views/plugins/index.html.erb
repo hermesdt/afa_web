@@ -15,11 +15,13 @@
     <td><%= plugin.os %></td>
     <td><%= plugin.category.name %></td>
     <td><%= plugin.author %></td>
-    <td><%= link_to image_technique, plugin_techniques_path(plugin) %>
-    <%= link_to image_show(), plugin %>
-    <%= link_to image_edit, edit_plugin_path(plugin) %>
-    <%= link_to image_destroy, plugin, :confirm => 'Are you sure?', :method => :delete %>
-    <%= link_to image_xml, plugin_path(plugin, :format => "xml") %></td>
+    <td>
+      <%= link_to image_technique, plugin_techniques_path(plugin) %>
+      <%= link_to image_show(), plugin %>
+      <%= link_to image_edit, edit_plugin_path(plugin) if can?("manage", "Plugin") %>
+      <%= link_to image_destroy, plugin, :confirm => 'Are you sure?', :method => :delete if can?("manage", "Plugin") %>
+      <%= link_to image_xml, plugin_path(plugin, :format => "xml") %>
+    </td>
   </tr>
 <% end %>
 </table>
@@ -27,6 +29,6 @@
 <br />
 
 <div class="grouped-links">
-<%= link_to image_add() + ' New Plugin', new_plugin_path %>
+<%= link_to image_add() + ' New Plugin', new_plugin_path if can?("manage", "Plugin")%>
 </div>
 

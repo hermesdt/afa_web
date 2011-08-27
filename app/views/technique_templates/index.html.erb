@@ -11,8 +11,9 @@
     <td><%= technique_template.name %></td>
     <td>
     <%= link_to image_show, technique_template %>
-    <%= link_to image_edit, edit_technique_template_path(technique_template) %>
-    <%= link_to image_destroy, technique_template, :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to image_edit, edit_technique_template_path(technique_template) if can?("manage", "TechniqueTemplate") %>
+    <%= link_to image_destroy, technique_template, :confirm => 'Are you sure?', 
+    :method => :delete if can?("manage", "TechniqueTemplate") %>
     </td>
   </tr>
 <% end %>
@@ -21,6 +22,6 @@
 <br />
 
 <div class="grouped-links">
-<%= link_to image_add() + ' New Technique template', new_technique_template_path %>
+<%= link_to image_add() + ' New Technique template', new_technique_template_path if can?("manage", "TechniqueTemplate")%>
 </div>
 

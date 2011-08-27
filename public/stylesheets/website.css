@@ -7,6 +7,15 @@ body {
 	color: #333;
 }
 
+div.table { display: table}
+div.tr { display: table-row}
+div.td { display: table-cell; vertical-align: middle; padding: 3px;}
+div.column {display: table-column}
+
+#abilities {
+  display: relative;
+}
+
 a:hover {
 background: none;
   }

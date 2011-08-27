@@ -49,6 +49,11 @@
     <li class="<%= selected_class(about_path)%>">
       <%= link_to 'About', about_path %>
     </li>
+    <% if current_user != nil and current_user.is_admin? %>
+    <li class="<%= selected_class(administration_path) %>">
+      <%= link_to "Administration", administration_path %>
+    </li>
+    <% end %>
 <!--    <li>
       <a href="#">Contact</a>
     </li>

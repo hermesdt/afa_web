@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  before_filter :check_ability, :except => [:index, :show]
+
   # GET /tags
   # GET /tags.xml
   def index

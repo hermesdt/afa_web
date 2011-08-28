@@ -1,9 +1,18 @@
 <h1>Listing posts</h1>
 
-<% if can?("manage", "Post") %>
-<%= link_to image_add + "New post", new_post_path %><br /><br />
-<% end %>
+<div style="position: relative">
+  <div style="position: relative; float: left;">
+  <% if can?("manage", "Post") %>
+  <%= link_to image_add + "New post", new_post_path %><br /><br />
+  <% end %>
+  </div>
+  <div style="position: relative; float: right;">
+  <%= link_to image_rss, posts_url(:format => :rss) %>
+  </div>
+</div>
 
+<div style="position: relative; float: left;">
 <% for post in @posts %>
  <%= render :partial => post %>
 <% end %>
+</div>

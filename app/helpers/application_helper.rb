@@ -60,6 +60,10 @@ module ApplicationHelper
 
   end
 
+  def image_rss
+    image_tag "rss.png"
+  end
+
   def image_blog
     image_tag "blog.png"
   end

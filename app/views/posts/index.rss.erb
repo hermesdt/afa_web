@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>AFA rss</title>
+    <link><%= posts_url(:format => :rss) %></link>
+    <description>The latest news from afa.com</description>
+    <% for post in @posts %>
+    <item>
+      <title><%= post.title %></title>
+      <link><%= post_url(post) %></link>
+      <description><%= post.text %></description>
+      <pubDate><%= post.created_at %></pubDate>
+      <lastBuildDate><%= post.updated_at %></lastBuildDate>
+    </item>
+    <% end %>
+  </channel>
+</rss>

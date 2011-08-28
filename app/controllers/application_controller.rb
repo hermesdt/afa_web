@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_ability
-    unauthorized if params[:action].nil? or params[:controller].nil?
+    unauthorized if params[:action].nil? or params[:controller].nil? or current_user.nil?
     return if current_user.is_admin?
 
     model = params[:controller].singularize.camelize

@@ -10,6 +10,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @posts }
+      format.rss {render :content_type => 'application/rss'} 
     end
   end
 

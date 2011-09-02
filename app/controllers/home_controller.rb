@@ -3,7 +3,6 @@ class HomeController < ApplicationController
   before_filter :is_admin?, :only => :administration
 
   def index
-    @posts = Post.order("updated_at desc").all
 
     respond_to do |format|
       format.html

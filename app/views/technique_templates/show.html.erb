@@ -14,7 +14,9 @@
 
 
 <div class="grouped-links">
+<% if can? "manage", "TechniqueTemplate" %>
 <%= link_to 'Edit', edit_technique_template_path(@technique_template) %> |
+<% end %>
 <%= link_to 'Back', technique_templates_path %>
 </div>
 

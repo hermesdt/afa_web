@@ -6,7 +6,9 @@
 </p>
 
 <div class="grouped-links">
+<% if can? "manage", "Tag" %>
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
+<% end %>
 <%= link_to 'Back', tags_path %>
 </div>
 

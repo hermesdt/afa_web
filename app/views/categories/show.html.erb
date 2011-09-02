@@ -6,7 +6,9 @@
 </p>
 
 <div class="grouped-links">
+<% if can? "manage", "Category" %>
 <%= link_to 'Edit', edit_category_path(@category) %> |
+<% end %>
 <%= link_to 'List Categories', categories_path %>
 </div>
 

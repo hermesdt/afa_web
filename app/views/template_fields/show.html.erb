@@ -21,7 +21,9 @@
 </p>
 
 <div class="grouped-links">
+<% if can? "manage", "TemplateField" %>
 <%= link_to 'Edit', edit_template_field_path(@template_field) %> |
+<% end %>
 <%= link_to 'Back', template_fields_path %>
 </div>
 

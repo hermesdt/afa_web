@@ -6,7 +6,9 @@
 </p>
 
 <div class="grouped-links">
+<% if can? "manage", "FieldCategory" %>
 <%= link_to 'Edit', edit_field_category_path(@field_category) %> |
+<% end %>
 <%= link_to 'Back', field_categories_path %>
 </div>
 

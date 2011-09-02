@@ -21,8 +21,11 @@
   <p><%= f.submit "Update" %></p>
 <% end %>
 
+<% unless current_user.is_admin? %>
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+
+<% end %>
 
 <%= link_to "Back", :back %>

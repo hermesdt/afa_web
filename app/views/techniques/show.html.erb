@@ -40,7 +40,9 @@
 </p>
 
 <div class="grouped-links">
-<%= link_to 'Techniques list', plugin_techniques_path(@plugin) %> |
-<%= link_to 'Edit', edit_plugin_technique_path(@plugin, @technique) %>
+<% if can? "manage", "Technique" %>
+<%= link_to 'Edit', edit_plugin_technique_path(@plugin, @technique) %> |
+<% end %>
+<%= link_to 'Techniques list', plugin_techniques_path(@plugin) %> 
 </div>
 

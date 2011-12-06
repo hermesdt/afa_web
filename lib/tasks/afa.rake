@@ -1,11 +1,7 @@
 namespace :afa do
   desc "Generate admin user"
   task "admin" => :environment do
-    u = User.new
-
-    u.email = "admin"
-    u.name = "admin"
-    u.is_admin = true
+    u = User.find_or_initialize_by_email_and_name_and_is_admin("admin", "admin", true)
 
     password = nil
     while password.blank?

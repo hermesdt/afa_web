@@ -11,6 +11,10 @@ div.table { display: table}
 div.tr { display: table-row}
 div.td { display: table-cell; vertical-align: middle; padding: 3px;}
 div.column {display: table-column}
+.center {text-align: center}
+
+div.help {}
+p.help {margin: 0 0 0 0; line-height: 0px;}
 
 #abilities {
   display: relative;

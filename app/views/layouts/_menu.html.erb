@@ -42,6 +42,9 @@
     <li class="<%= (request.path == downloads_path)? "selected" : "" %>">
       <%= link_to 'Downloads', downloads_path %>
     </li>
+    <li class="<%= (request.path[help_index_path])? "selected" : "" %>">
+      <%= link_to 'Help', help_index_path %>
+    </li>
 <!--    <li>
       <a href="#">Wiki</a>
     </li>

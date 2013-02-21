@@ -10,11 +10,11 @@
 
   <div class="field">
     <%= f.label :filename %><br />
-    <%= f.text_field :filename, :value => tech.filename %>
+    <%= f.text_field :filename, :value => tech.filename %> (Name of the file)
   </div>
   <div class="field">
     <%= f.label :location %><br />
-    <%= f.text_field :location, :value => tech.location %>
+    <%= f.text_field :location, :value => tech.location %> (Parent directory of the file)
   </div>
   <div class="field">
     <%= f.label :technique_type_id %><br />
@@ -25,30 +25,30 @@
     </div>
   <div class="field">
     <%= f.label :recursively %><br />
-    <%= f.check_box :recursively, :checked => tech.recursively %>
+    <%= f.check_box :recursively, :checked => tech.recursively %> (Search recursively or not)
   </div>
 <% if @technique_template.tech_attr_value('hash_type') %>
   <div class="field">
     <%= f.label :hash_type %><br />
-    <%= f.text_field :hash_type, :value => tech.hash_type %>
+    <%= f.text_field :hash_type, :value => tech.hash_type %> (MD5 or SHA1)
   </div>
 <% end %>
 <% if @technique_template.tech_attr_value('hash_value') %>
   <div class="field">
     <%= f.label :hash_value %><br />
-    <%= f.text_field :hash_value, :value => tech.hash_value %>
+    <%= f.text_field :hash_value, :value => tech.hash_value %> (Value of the hash)
   </div>
 <% end %>
 <% if @technique_template.tech_attr_value('content') %>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_field :content, :value => tech.content %>
+    <%= f.text_field :content, :value => tech.content %> (Content that the file must contains)
   </div>
 <% end %>
 <% if @technique_template.tech_attr_value('mimetype') %>
   <div class="field">
     <%= f.label :mimetype %><br />
-    <%= f.text_field :mimetype, :value => tech.mimetype %>
+    <%= f.text_field :mimetype, :value => tech.mimetype %> (Mimetype, ex: application/pdf)
   </div>
 <% end %>
 <br />

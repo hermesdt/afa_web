@@ -1,4 +1,4 @@
-<h2>Updating abilities for user: <%= @user.name  %></h2>
+<h3>Updating abilities for user: <%= @user.name  %></h3>
 
 <br />
 <%= form_tag url_for(:action => :update_abilities) do %>
@@ -50,6 +50,10 @@ window.onload = function(){
 
 <br />
 <div class="table">
+  <div class="tr">
+    <div class="td center">action</div>
+    <div class="td center">model</div>
+  </div>
   <div class="tr">
     <div class="td"><%= select_tag :actions, options_for_select(@actions_options) %></div>
     <div class="td"><%= select_tag :models, options_for_select(@models_options) %></div>

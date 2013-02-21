@@ -1,7 +1,18 @@
 AfaWeb::Application.routes.draw do
 
+  get "help/index"
+
 #  devise_for :users
   devise_for :users, :path_names => {:sign_in => "login", :sign_out => "logout"}
+
+#  resources "help" do
+#    collection do
+#      get 'plugins'
+#      get 'tags'
+#    end
+#  end
+
+  match 'help' => 'help#index'
 
   resources :users do
     get 'abilities', :on => :member
@@ -38,7 +49,6 @@ AfaWeb::Application.routes.draw do
   match 'about' => 'home#about'
   match 'administration' => 'home#administration'
   match 'downloads' => 'downloads#index'
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

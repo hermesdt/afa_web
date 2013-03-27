@@ -71,6 +71,8 @@ class TechniquesController < ApplicationController
   # PUT /techniques/1.xml
   def update
     @technique = @plugin.techniques.find(params[:id])
+    @technique_template ||= TechniqueTemplate.new
+    @technique_template.technique = @technique
 
     respond_to do |format|
       if @technique.update_attributes(params[:technique])

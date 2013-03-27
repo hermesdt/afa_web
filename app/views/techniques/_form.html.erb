@@ -1,5 +1,4 @@
-<%= form_for(@technique, :url => (
-  params[:action] == "edit"? plugin_technique_path(@plugin, @technique) : plugin_techniques_path(@plugin))) do |f| %>
+<%= form_for([@plugin, @technique]) do |f| %>
   <div id="explanation">
   <% if @technique.errors.any? %>
   <%= render :partial => 'error_explanation' %>
@@ -24,8 +23,9 @@
       :remote => true %>
     </div>
   <div class="field">
-    <%= f.label :recursively %><br />
-    <%= f.check_box :recursively, :checked => tech.recursively %> (Search recursively or not)
+    Recursively<br />
+    <%= f.check_box :recursively, :checked => tech.recursively %>
+    <%= f.label :recursively, "(Search recursively or not)" %><br />
   </div>
 <% if @technique_template.tech_attr_value('hash_type') %>
   <div class="field">
